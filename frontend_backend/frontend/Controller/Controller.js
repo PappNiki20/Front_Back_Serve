@@ -23,6 +23,7 @@ class Controller {
      
        
     this.adatleiro = new AdatModel();
+   
     console.log(this.adatleiro.leiro);
    
     this.UrlapView = new UrlapView($(".urlap"), this.adatleiro.leiro);

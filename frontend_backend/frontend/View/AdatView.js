@@ -5,13 +5,14 @@ class AdatView {
   constructor(lista, szuloElem,leiro) {
     this.#lista = lista;
     this.#leiro = leiro;
-    szuloElem.append(`<table class= table table-danger table-hover >`);
-    this.tablaElem = szuloElem.children("table");
+    szuloElem.append(`<table class= table  table-hover >`);
+    this.fejlec()
+    this.tablaElem = szuloElem.find("tbody");
     console.log(leiro)
     this.megjelenit();
   }
   megjelenit() {
-    this.fejlec()
+    
     this.#lista.forEach((elem, index) => {
       new TablazatSorView(elem, this.tablaElem, index);
     });
@@ -22,9 +23,9 @@ class AdatView {
     for (const key in this.#leiro) {
       txt += `<th>${this.#leiro[key].megj}</th>`;
     }
-    txt += `</tr>`;
+    txt += `</tr></thead><tbody>`;
 
-    this.tablaElem.append(txt);
+    this.szuloElem.append(txt);
   }
 }
-export default AdatView;
+export default AdatView
