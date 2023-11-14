@@ -33,7 +33,7 @@ class Writercontroller extends Controller
         $writer->save();
        
 
-        return redirect('/writers');
+        return redirect('/api/writers');
     }
 }
 
