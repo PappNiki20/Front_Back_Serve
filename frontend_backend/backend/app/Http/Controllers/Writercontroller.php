@@ -21,6 +21,20 @@ class Writercontroller extends Controller
 
         return Writer::find($record->id);
     }
+    public function destroy($id){
+        $writer = Writer::find($id)->delete();
+       
+
+        return response()->json(['message' =>'Sikeres törlés!',201]);
+    }
+    public function update(Request $request, $id){
+        $writer = Writer::find($id);
+        $writer->nev = $request->nev;
+        $writer->save();
+       
+
+        return redirect('/writers');
+    }
 }
 
 
