@@ -14,7 +14,7 @@ class DataService {
         console.log("Statusz szoveg", response.statusText);
         console.log("Valasz fejlec", response.headers);
         console.log("Valasz config", response.config);
-        callback(response.data.nevek)
+        callback(response.data)
       })
       .catch(function (error) {
         // handle error
@@ -69,19 +69,15 @@ class DataService {
       })
   };
   deleteAxiosData(url, id) {
-
-    console.log(`${url}/${id}`)
     axios
       .delete(`${url}/${id}`)
-
-
       .then((response) => {
-        console.log("RESP", response)
+        console.log("RESP", response);
       })
       .catch((error) => {
-        console.log("hiba", error)
-      })
-  };
+        console.log("hiba", error);
+      });
+}
 
 }
 

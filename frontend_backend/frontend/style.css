@@ -4,7 +4,7 @@ h1{
   background-color: rgb(210, 206, 206);
 }
 .valid{
-  color: green;
+  color: green ;
 }
 .invalid{
    color:red
@@ -22,4 +22,7 @@ body{
 }
 table{
   margin-top: 15px;
+}
+table.custom-table .my-custom-row {
+  background-color: lightgreen !important;
 }

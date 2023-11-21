@@ -12,14 +12,20 @@ export const urlapleiro={
         type:"number",
         placeholder:"2000",
         value:"2000",
-        regex:{
+       
             min:1000,
-            max:2023
-        },
+            max:2023,
+       
         valid:"1000 és 2023 közötti számot várunk"
     },
-    gombok:{
-        megj:"Gombok"
-    }
     
-}
+    letre:{
+        megj:"Létrehozva"
+    },
+    modos:{
+        megj:"Módosítva"
+    },
+    allapot:{
+        megj:"Állapot"
+    },
+};

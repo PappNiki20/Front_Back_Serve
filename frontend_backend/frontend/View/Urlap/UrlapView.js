@@ -64,7 +64,7 @@ class UrlapView {
     this.formElem.append(txt);
   }
   #esemenyTrigger(esemenynev){
-    const esemenyem = new CustomEvent(esemenynev,{detail:this})
+    const esemenyem = new CustomEvent(esemenynev,{detail:this.#urlapAdatok})
     window.dispatchEvent(esemenyem)
   }
 }

@@ -3,7 +3,7 @@ class TablazatSor{
     constructor(adat, szuloElem,index) {
       this.#adat = adat;
       this.tablaElem = szuloElem;
-      
+      this.tablaElem.addClass("custom-table");
       this.#sor();
       this.index=index
       this.sorElem = this.tablaElem.children("tbody").children("tr:last-child");
@@ -14,7 +14,8 @@ class TablazatSor{
       //console.log(this.pipa)
       this.pipa.on("click",()=>{
           //console.log(this)
-          this.sorElem.css("background-color","lightgreen")
+          this.sorElem.addClass("my-custom-row");
+          this.sorElem.css("background-color  ","lightgreen !important")
           this.megse.show()
           this.pipa.hide()
           this.#esemenyTrigger("kesz")
@@ -37,7 +38,7 @@ class TablazatSor{
     }
     #sor() {
       let txt = "";
-      txt+="<tbody>"
+     
       txt += "<tr>";
       for (const key in this.#adat) {
         const element = this.#adat[key];
@@ -47,12 +48,15 @@ class TablazatSor{
       <span   class="kesz">✅</span> 
       <span   class="megse" >❌</span> </td>`;
       txt += `</tr>`;
-      txt+="</tbody>"
+      
   
       this.tablaElem.append(txt);
     }
     #esemenyTrigger(esemenynev){
-      const esemenyem = new CustomEvent(esemenynev,{detail:this.index})
+      const esemenyem = new CustomEvent(esemenynev,{
+        detail:{
+      index: this.#adat.id, sorElem: this.sorElem}
+      })
       window.dispatchEvent(esemenyem)
     }
 }
